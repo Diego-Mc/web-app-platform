@@ -1,4 +1,4 @@
-import { Button } from '@mantine/core'
+import { Button, Stack } from '@mantine/core'
 import { Group } from '@mantine/core'
 import { TextInput } from '@mantine/core'
 import { isEmail, matches } from '@mantine/form'
@@ -34,25 +34,29 @@ export function LoginForm({ onSubmit }: Props) {
 
   return (
     <form onSubmit={form.onSubmit(handleSubmit)}>
-      <TextInput
-        label="Your email"
-        placeholder="Your email"
-        withAsterisk
-        mt="md"
-        key={form.key('email')}
-        {...form.getInputProps('email')}
-      />
-      <TextInput
-        label="Password"
-        placeholder="Password"
-        withAsterisk
-        key={form.key('password')}
-        {...form.getInputProps('password')}
-      />
+      <Stack>
+        <TextInput
+          label="Your email"
+          placeholder="Your email"
+          withAsterisk
+          mt="md"
+          key={form.key('email')}
+          {...form.getInputProps('email')}
+        />
+        <TextInput
+          label="Password"
+          placeholder="Password"
+          withAsterisk
+          key={form.key('password')}
+          {...form.getInputProps('password')}
+        />
 
-      <Group justify="flex-end" mt="md">
-        <Button type="submit">Login</Button>
-      </Group>
+        <Group justify="flex-end" mt="md">
+          <Button variant="filled" color="dark" type="submit">
+            Login
+          </Button>
+        </Group>
+      </Stack>
     </form>
   )
 }

@@ -1,4 +1,4 @@
-import { LoginScreen } from '@/features/authentication/screens/LoginScreen'
+import { LoginScreen } from '@/features/authentication/screens/LoginScreen/LoginScreen'
 import { notifications } from '@mantine/notifications'
 import { useNavigate } from 'react-router'
 

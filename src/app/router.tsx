@@ -1,8 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router'
 import { Login } from './routes/Login'
 import { AuthorizationLayout } from '@/feature/authentication/components/AuthorizationLayout'
-import { WAP_ROUTES } from '@/consts/wap-routes'
 import { Wap } from './routes/Wap'
+import { Foods, WAP_ROUTES, DEFAULT_WAP_ROUTE } from './routes/wap-screens'
 
 export function Router() {
   return (
@@ -10,13 +10,12 @@ export function Router() {
       <Route path="/login" element={<Login />} />
       <Route element={<AuthorizationLayout />}>
         <Route path="wap" element={<Wap />}>
-          <Route index element={<Navigate to={WAP_ROUTES[0].path} replace />} />
+          <Route
+            index
+            element={<Navigate to={DEFAULT_WAP_ROUTE.path} replace />}
+          />
           {WAP_ROUTES.map((route) => (
-            <Route
-              key={route.path}
-              path={route.path}
-              element={<h1>{route.label}</h1>}
-            />
+            <Route key={route.path} path={route.path} element={<Foods />} />
           ))}
         </Route>
         <Route path="/" element={<Navigate to="/wap" replace />} />

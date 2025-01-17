@@ -1,4 +1,4 @@
-import { WAP_ROUTES } from '@/consts/wap-routes'
+import { WAP_ROUTES } from './wap-screens'
 import { WapScreen } from '@/screens/WapScreen'
 
 export function Wap() {

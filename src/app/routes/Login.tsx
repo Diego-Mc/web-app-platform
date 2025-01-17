@@ -1,14 +1,18 @@
-import { LoginForm } from '@/feature/authentication/components/LoginForm'
-import { FormValues } from '@/feature/authentication/types/login'
+import { LoginScreen } from '@/feature/authentication/screens/LoginScreen'
+import { notifications } from '@mantine/notifications'
 import { useNavigate } from 'react-router'
 
 export function Login() {
   const navigate = useNavigate()
 
-  const handleSubmit = (values: FormValues) => {
-    console.log(values)
-    void navigate('/wap/foods')
+  const handleLoginSuccess = () => {
+    void navigate('/wap')
+    notifications.show({
+      title: 'Login Success',
+      message: 'You are now logged in',
+      color: 'green',
+    })
   }
 
-  return <LoginForm onSubmit={handleSubmit} />
+  return <LoginScreen onLoginSuccess={handleLoginSuccess} />
 }

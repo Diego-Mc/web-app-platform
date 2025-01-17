@@ -1,16 +1,21 @@
-import { Navigate, Route, Routes } from 'react-router'
+import { Navigate, Outlet, Route, Routes } from 'react-router'
 import { Login } from './routes/Login'
+import { AuthorizationLayout } from '@/feature/authentication/components/AuthorizationLayout'
 
 export function Router() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
-      {/* TODO: add a layout for wap to be checked for auth */}
-      {/* TODO: add a layout for wap to have an inner slot to only render the different inner content */}
-      <Route path="/wap/foods" element={<h1>Foods</h1>} />
-      <Route path="/wap/cars" element={<h1>Cars</h1>} />
-      <Route path="/wap/products" element={<h1>Products</h1>} />
-      <Route path="*" element={<Navigate to="/login" replace />} />
+      <Route element={<AuthorizationLayout />}>
+        <Route path="wap" element={<Outlet />}>
+          <Route index element={<Navigate to="foods" replace />} />
+          <Route path="foods" element={<h1>Foods</h1>} />
+          <Route path="cars" element={<h1>Cars</h1>} />
+          <Route path="products" element={<h1>Products</h1>} />
+        </Route>
+        <Route path="/" element={<Navigate to="/wap" replace />} />
+        <Route path="*" element={<h1>404</h1>} />
+      </Route>
     </Routes>
   )
 }

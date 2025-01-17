@@ -4,7 +4,7 @@ import { TextInput } from '@mantine/core'
 import { isEmail, matches } from '@mantine/form'
 import { useForm } from '@mantine/form'
 import { FormValues } from '../types/login'
-import { useLoginActions } from '../hooks/useLoginActions'
+import { useAuth } from '../hooks/useAuth'
 
 type Props = {
   onSubmit: (values: FormValues) => void
@@ -26,7 +26,7 @@ export function LoginForm({ onSubmit }: Props) {
     },
   })
 
-  const { login } = useLoginActions()
+  const { login } = useAuth()
   const handleSubmit = (values: FormValues) => {
     login()
     onSubmit(values)

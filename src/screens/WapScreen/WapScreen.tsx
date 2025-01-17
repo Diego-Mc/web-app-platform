@@ -1,9 +1,19 @@
-import { AppShell, Burger, Group, Stack, Text } from '@mantine/core'
+import {
+  AppShell,
+  Burger,
+  Button,
+  Group,
+  Stack,
+  Text,
+  Title,
+} from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { Outlet } from 'react-router'
 import { WapLink } from '../../components/WapLink/WapLink'
 import { WapRoutes } from '@/types/wap-routes'
 import { useStyles } from './useStyles'
+import { IconLogout } from '@tabler/icons-react'
+import { useAuth } from '@/features/authentication/hooks/useAuth'
 
 type Props = {
   routes: WapRoutes<string>
@@ -13,6 +23,8 @@ export function WapScreen(props: Props) {
   const { routes } = props
 
   const { classes } = useStyles()
+
+  const { logout } = useAuth()
 
   const [mobileOpened, { toggle: toggleMobile, close: closeMobile }] =
     useDisclosure()
@@ -29,20 +41,33 @@ export function WapScreen(props: Props) {
       padding="md"
     >
       <AppShell.Header>
-        <Group h="100%" px="md">
-          <Burger
-            opened={mobileOpened}
-            onClick={toggleMobile}
-            hiddenFrom="sm"
-            size="sm"
-          />
-          <Burger
-            opened={desktopOpened}
-            onClick={toggleDesktop}
-            visibleFrom="sm"
-            size="sm"
-          />
-          <h4>Logo</h4>
+        <Group h="100%" px="md" justify="space-between" align="center">
+          <Group h="100%" align="center">
+            <Burger
+              opened={mobileOpened}
+              onClick={toggleMobile}
+              hiddenFrom="sm"
+              size="sm"
+            />
+            <Burger
+              opened={desktopOpened}
+              onClick={toggleDesktop}
+              visibleFrom="sm"
+              size="sm"
+            />
+            <Title order={4} m={0}>
+              Logo
+            </Title>
+          </Group>
+          <Group h="100%">
+            <Button
+              onClick={logout}
+              variant="default"
+              rightSection={<IconLogout size={16} />}
+            >
+              Logout
+            </Button>
+          </Group>
         </Group>
       </AppShell.Header>
       <AppShell.Navbar p="md">

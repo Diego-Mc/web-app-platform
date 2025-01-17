@@ -1,8 +1,8 @@
 import { Navigate, Outlet } from 'react-router'
-import { useIsAuthorized } from '../hooks/useIsAuthorized'
+import { useAuth } from '../hooks/useAuth'
 
 export function AuthorizationLayout() {
-  const isAuthorized = useIsAuthorized()
+  const { isAuthorized } = useAuth()
 
   if (!isAuthorized) {
     return <Navigate to="/login" replace />

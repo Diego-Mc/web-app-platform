@@ -1,11 +1,12 @@
 import { useSessionStorage } from '@mantine/hooks'
 import { FAKE_AUTH_TOKEN, FAKE_AUTH_TOKEN_KEY } from '../consts/login'
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 
-export function useLoginActions() {
-  const [, setValue, removeValue] = useSessionStorage({
+export function useAuth() {
+  const [value, setValue, removeValue] = useSessionStorage({
     key: FAKE_AUTH_TOKEN_KEY,
     defaultValue: '',
+    getInitialValueInEffect: false,
   })
 
   const login = useCallback(() => {
@@ -16,5 +17,7 @@ export function useLoginActions() {
     removeValue()
   }, [removeValue])
 
-  return { login, logout }
+  const isAuthorized = useMemo(() => value === FAKE_AUTH_TOKEN, [value])
+
+  return { login, logout, isAuthorized }
 }

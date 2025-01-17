@@ -1,4 +1,6 @@
+import { Button } from '@mantine/core'
 import { NavLink } from 'react-router'
+import { useStyles } from './useStyles'
 
 type Props = {
   to: string
@@ -8,12 +10,16 @@ type Props = {
 export function WapLink(props: Props) {
   const { to, label } = props
 
+  const { classes } = useStyles()
+
   return (
-    <NavLink
+    <Button
+      variant="default"
+      component={NavLink}
       to={to}
-      style={({ isActive }) => (isActive ? { color: 'green' } : {})}
+      className={classes.link}
     >
       {label}
-    </NavLink>
+    </Button>
   )
 }

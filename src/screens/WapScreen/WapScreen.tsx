@@ -1,8 +1,9 @@
-import { AppShell, Burger, Group } from '@mantine/core'
+import { AppShell, Burger, Group, Stack, Text } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { Outlet } from 'react-router'
 import { WapLink } from '../../components/WapLink/WapLink'
 import { WapRoutes } from '@/types/wap-routes'
+import { useStyles } from './useStyles'
 
 type Props = {
   routes: WapRoutes<string>
@@ -10,6 +11,8 @@ type Props = {
 
 export function WapScreen(props: Props) {
   const { routes } = props
+
+  const { classes } = useStyles()
 
   const [mobileOpened, { toggle: toggleMobile }] = useDisclosure()
   const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true)
@@ -42,9 +45,14 @@ export function WapScreen(props: Props) {
         </Group>
       </AppShell.Header>
       <AppShell.Navbar p="md">
-        {routes.map((route) => (
-          <WapLink key={route.path} to={route.path} label={route.label} />
-        ))}
+        <Text size="xs" fw="bold" className={classes.navbarTitle}>
+          Screens
+        </Text>
+        <Stack gap="xs">
+          {routes.map((route) => (
+            <WapLink key={route.path} to={route.path} label={route.label} />
+          ))}
+        </Stack>
       </AppShell.Navbar>
       <AppShell.Main>
         <Outlet />

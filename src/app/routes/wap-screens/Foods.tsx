@@ -7,20 +7,28 @@ const foodsData: WapData<FoodsDataKeys> = {
   form: {
     name: {
       type: 'text',
-      label: 'Name',
+      props: {
+        label: 'Name',
+      },
     },
     description: {
       type: 'textarea',
-      label: 'Description',
+      props: {
+        label: 'Description',
+      },
     },
     price: {
       type: 'number',
-      label: 'Price',
+      props: {
+        label: 'Price',
+      },
     },
     quantity: {
       type: 'select',
-      label: 'Quantity',
-      options: ['100', '200', '300'],
+      props: {
+        label: 'Quantity',
+        data: ['100', '200', '300'],
+      },
     },
   },
   table: [

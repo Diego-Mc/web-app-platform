@@ -1,31 +1,37 @@
-type BaseInput = {
-  label: string
+import {
+  CheckboxProps,
+  NumberInputProps,
+  RadioProps,
+  SelectProps,
+  TextareaProps,
+  TextInputProps,
+} from '@mantine/core'
+
+type BaseInput<Props> = {
+  props: Props & { label: string }
 }
 
-type FormInputText = BaseInput & {
+type FormInputText = BaseInput<TextInputProps> & {
   type: 'text'
 }
 
-type FormInputNumber = BaseInput & {
+type FormInputNumber = BaseInput<NumberInputProps> & {
   type: 'number'
 }
 
-type FormInputSelect = BaseInput & {
+type FormInputSelect = BaseInput<SelectProps> & {
   type: 'select'
-  options: string[]
 }
 
-type FormInputCheckbox = BaseInput & {
+type FormInputCheckbox = BaseInput<CheckboxProps> & {
   type: 'checkbox'
-  options: string[]
 }
 
-type FormInputRadio = BaseInput & {
+type FormInputRadio = BaseInput<RadioProps> & {
   type: 'radio'
-  options: string[]
 }
 
-type FormInputTextarea = BaseInput & {
+type FormInputTextarea = BaseInput<TextareaProps> & {
   type: 'textarea'
 }
 

@@ -1,9 +1,14 @@
-import { Box, Title } from '@mantine/core'
+import { LoginForm } from '@/feature/authentication/components/LoginForm'
+import { FormValues } from '@/feature/authentication/types/login'
+import { useNavigate } from 'react-router'
 
 export function Login() {
-  return (
-    <Box>
-      <Title>Login</Title>
-    </Box>
-  )
+  const navigate = useNavigate()
+
+  const handleSubmit = (values: FormValues) => {
+    console.log(values)
+    void navigate('/wap/foods')
+  }
+
+  return <LoginForm onSubmit={handleSubmit} />
 }

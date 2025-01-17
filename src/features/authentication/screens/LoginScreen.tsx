@@ -1,5 +1,5 @@
-import { LoginForm } from '@/feature/authentication/components/LoginForm'
-import { useIsAuthorized } from '@/feature/authentication/hooks/useIsAuthorized'
+import { LoginForm } from '../components/LoginForm'
+import { useIsAuthorized } from '../hooks/useIsAuthorized'
 import { Navigate } from 'react-router'
 
 type Props = {

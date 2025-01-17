@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router'
 import { Login } from './routes/Login'
-import { AuthorizationLayout } from '@/feature/authentication/components/AuthorizationLayout'
+import { AuthorizationLayout } from '@/features/authentication/components/AuthorizationLayout'
 import { Wap } from './routes/Wap'
 import {
   WAP_SCREENS,

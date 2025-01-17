@@ -72,12 +72,26 @@ const foodsData: WapData<FoodsDataKeys> = {
     ],
   },
   actions: [
-    { type: 'log', payload: { message: 'Foods data logged' } },
+    {
+      type: 'log',
+      label: 'Log',
+      payload: { message: 'Foods data logged' },
+    },
     {
       type: 'notification',
+      label: 'Notification',
       payload: {
         title: 'Foods',
         message: 'Foods data notified',
+        color: 'green',
+      },
+    },
+    {
+      type: 'notification',
+      label: 'Eat some food',
+      payload: {
+        title: 'Delicious',
+        message: 'The food is delicious!',
         color: 'green',
       },
     },

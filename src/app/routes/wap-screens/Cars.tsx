@@ -88,9 +88,14 @@ const carsData: WapData<CarsDataKeys> = {
     ],
   },
   actions: [
-    { type: 'log', payload: { message: 'Cars data logged' } },
+    {
+      type: 'log',
+      label: 'Log',
+      payload: { message: 'Cars data logged' },
+    },
     {
       type: 'notification',
+      label: 'Notification',
       payload: {
         title: 'Cars',
         message: 'Cars data notified',
@@ -99,6 +104,7 @@ const carsData: WapData<CarsDataKeys> = {
     },
     {
       type: 'notification',
+      label: 'Fire!',
       payload: {
         title: 'Cars',
         message: 'Cars are on fire!',

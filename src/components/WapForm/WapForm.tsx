@@ -8,7 +8,7 @@ import {
   Stack,
   Textarea,
   TextInput,
-  Title,
+  Flex,
 } from '@mantine/core'
 
 const renderComponent = (
@@ -27,13 +27,15 @@ const renderComponent = (
     case 'radio':
       return (
         <Radio.Group key={key} {...input.props}>
-          {input.options.map((option) => (
-            <Radio
-              key={option.value}
-              value={option.value}
-              label={option.label}
-            />
-          ))}
+          <Flex gap="md">
+            {input.options.map((option) => (
+              <Radio
+                key={option.value}
+                value={option.value}
+                label={option.label}
+              />
+            ))}
+          </Flex>
         </Radio.Group>
       )
     case 'textarea':
@@ -52,7 +54,6 @@ export function WapForm<T extends string>(props: Props<T>) {
 
   return (
     <Stack>
-      <Title order={2}>Form</Title>
       {entriesOf(data).map(([key, value]) => renderComponent(value, key))}
     </Stack>
   )

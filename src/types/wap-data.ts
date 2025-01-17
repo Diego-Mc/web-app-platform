@@ -69,12 +69,16 @@ type NotificationPayload = {
   color: 'green' | 'red' | 'yellow'
 }
 
-type LogAction = {
+type BaseAction = {
+  label: string
+}
+
+type LogAction = BaseAction & {
   type: 'log'
   payload: LogPayload
 }
 
-type NotificationAction = {
+type NotificationAction = BaseAction & {
   type: 'notification'
   payload: NotificationPayload
 }

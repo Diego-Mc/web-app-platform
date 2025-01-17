@@ -104,9 +104,14 @@ const productsData: WapData<ProductsDataKeys> = {
     ],
   },
   actions: [
-    { type: 'log', payload: { message: 'Products data logged' } },
+    {
+      type: 'log',
+      label: 'Log',
+      payload: { message: 'Products data logged' },
+    },
     {
       type: 'notification',
+      label: 'Products',
       payload: {
         title: 'Products',
         message: 'Products data notified',
@@ -115,8 +120,9 @@ const productsData: WapData<ProductsDataKeys> = {
     },
     {
       type: 'notification',
+      label: 'SALE!',
       payload: {
-        title: 'SALE!',
+        title: 'Products',
         message: 'Products are on SALE!',
         color: 'yellow',
       },

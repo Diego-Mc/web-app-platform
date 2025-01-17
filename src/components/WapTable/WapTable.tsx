@@ -1,5 +1,5 @@
 import { WapTableData } from '@/types/wap-data'
-import { Stack, Title } from '@mantine/core'
+import { Stack } from '@mantine/core'
 import { Table } from '@mantine/core'
 
 type Props<T extends string> = {
@@ -11,7 +11,6 @@ export function WapTable<T extends string>(props: Props<T>) {
 
   return (
     <Stack>
-      <Title order={2}>Table</Title>
       <Table.ScrollContainer minWidth={500}>
         <Table>
           <Table.Thead>

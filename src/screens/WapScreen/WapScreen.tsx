@@ -42,11 +42,9 @@ export function WapScreen(props: Props) {
         </Group>
       </AppShell.Header>
       <AppShell.Navbar p="md">
-        <>
-          {routes.map((route) => (
-            <WapLink key={route.path} to={route.path} label={route.label} />
-          ))}
-        </>
+        {routes.map((route) => (
+          <WapLink key={route.path} to={route.path} label={route.label} />
+        ))}
       </AppShell.Navbar>
       <AppShell.Main>
         <Outlet />

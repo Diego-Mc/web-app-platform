@@ -31,26 +31,46 @@ const foodsData: WapData<FoodsDataKeys> = {
       },
     },
   },
-  table: [
-    {
-      name: 'Tomato',
-      description: 'Tomato is a fruit',
-      price: '10$',
-      quantity: '100',
-    },
-    {
-      name: 'Potato',
-      description: 'Potato is a vegetable',
-      price: '20$',
-      quantity: '200',
-    },
-    {
-      name: 'Carrot',
-      description: 'Carrot is a vegetable',
-      price: '30$',
-      quantity: '300',
-    },
-  ],
+  table: {
+    columns: [
+      {
+        key: 'name',
+        label: 'Name',
+      },
+      {
+        key: 'description',
+        label: 'Description',
+      },
+      {
+        key: 'price',
+        label: 'Price',
+      },
+      {
+        key: 'quantity',
+        label: 'Quantity',
+      },
+    ],
+    rows: [
+      {
+        name: 'Tomato',
+        description: 'Tomato is a fruit',
+        price: '10$',
+        quantity: '100',
+      },
+      {
+        name: 'Potato',
+        description: 'Potato is a vegetable',
+        price: '20$',
+        quantity: '200',
+      },
+      {
+        name: 'Carrot',
+        description: 'Carrot is a vegetable',
+        price: '30$',
+        quantity: '300',
+      },
+    ],
+  },
   actions: [
     { type: 'log', payload: { message: 'Foods data loaded' } },
     {

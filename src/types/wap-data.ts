@@ -45,8 +45,15 @@ export type WapFormData<WapDataKeys extends string> = Record<
   | FormInputTextarea
 >
 
+type TableColumn<WapDataKeys extends string> = {
+  key: WapDataKeys
+  label: string
+}
 type TableRow<WapDataKeys extends string> = Record<WapDataKeys, string>
-export type WapTableData<WapDataKeys extends string> = TableRow<WapDataKeys>[]
+export type WapTableData<WapDataKeys extends string> = {
+  columns: TableColumn<WapDataKeys>[]
+  rows: TableRow<WapDataKeys>[]
+}
 
 type LogPayload = {
   message: string

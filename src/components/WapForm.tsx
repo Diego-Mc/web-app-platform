@@ -25,7 +25,17 @@ const renderComponent = (
     case 'checkbox':
       return <Checkbox key={key} {...input.props} />
     case 'radio':
-      return <Radio key={key} {...input.props} />
+      return (
+        <Radio.Group key={key} {...input.props}>
+          {input.options.map((option) => (
+            <Radio
+              key={option.value}
+              value={option.value}
+              label={option.label}
+            />
+          ))}
+        </Radio.Group>
+      )
     case 'textarea':
       return <Textarea key={key} {...input.props} />
     default:

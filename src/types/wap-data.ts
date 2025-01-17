@@ -1,7 +1,7 @@
 import {
   CheckboxProps,
   NumberInputProps,
-  RadioProps,
+  RadioGroupProps,
   SelectProps,
   TextareaProps,
   TextInputProps,
@@ -27,8 +27,12 @@ type FormInputCheckbox = BaseInput<CheckboxProps> & {
   type: 'checkbox'
 }
 
-type FormInputRadio = BaseInput<RadioProps> & {
+type FormInputRadio = BaseInput<Omit<RadioGroupProps, 'children'>> & {
   type: 'radio'
+  options: Array<{
+    label: string
+    value: string
+  }>
 }
 
 type FormInputTextarea = BaseInput<TextareaProps> & {

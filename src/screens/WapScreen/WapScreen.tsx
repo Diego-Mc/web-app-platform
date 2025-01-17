@@ -14,7 +14,8 @@ export function WapScreen(props: Props) {
 
   const { classes } = useStyles()
 
-  const [mobileOpened, { toggle: toggleMobile }] = useDisclosure()
+  const [mobileOpened, { toggle: toggleMobile, close: closeMobile }] =
+    useDisclosure()
   const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true)
 
   return (
@@ -50,7 +51,12 @@ export function WapScreen(props: Props) {
         </Text>
         <Stack gap="xs">
           {routes.map((route) => (
-            <WapLink key={route.path} to={route.path} label={route.label} />
+            <WapLink
+              key={route.path}
+              onClick={closeMobile}
+              to={route.path}
+              label={route.label}
+            />
           ))}
         </Stack>
       </AppShell.Navbar>

@@ -11,8 +11,8 @@ export function WapTable<T extends string>(props: Props<T>) {
 
   return (
     <Stack>
-      <Table.ScrollContainer minWidth={500}>
-        <Table>
+      <Table.ScrollContainer minWidth={600}>
+        <Table highlightOnHover withTableBorder withColumnBorders>
           <Table.Thead>
             <Table.Tr>
               {data.columns.map((column) => (

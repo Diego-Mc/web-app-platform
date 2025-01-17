@@ -8,7 +8,7 @@ import eslintConfigPrettier from 'eslint-config-prettier'
 
 export default tseslint.config(
   { ignores: ['dist'] },
-  { settings: { react: { version: '18.3' } } },
+  { settings: { react: { version: '19' } } },
   {
     extends: [
       js.configs.recommended,

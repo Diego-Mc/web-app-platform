@@ -1,0 +1,1 @@
+export { WapTable } from './WapTable'

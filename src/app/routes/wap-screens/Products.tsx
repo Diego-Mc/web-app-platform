@@ -1,4 +1,4 @@
-import { WapContentScreen } from '@/screens/WapContentScreen'
+import { WapContentScreen } from '@/screens/WapContentScreen/WapContentScreen'
 import { WapData } from '@/types/wap-data'
 
 type ProductsDataKeys =

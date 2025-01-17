@@ -1,6 +1,6 @@
-import { WapActions } from '@/components/WapActions'
-import { WapForm } from '@/components/WapForm'
-import { WapTable } from '@/components/WapTable'
+import { WapActions } from '@/components/WapActions/WapActions'
+import { WapForm } from '@/components/WapForm/WapForm'
+import { WapTable } from '@/components/WapTable/WapTable'
 import { WapData } from '@/types/wap-data'
 
 type Props<T extends string> = {

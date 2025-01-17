@@ -1,0 +1,1 @@
+export { WapContentScreen } from './WapContentScreen'

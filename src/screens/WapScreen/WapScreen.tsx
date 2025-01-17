@@ -1,11 +1,11 @@
 import { AppShell, Burger, Group } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { Outlet } from 'react-router'
-import { WapLink } from '../components/WapLink'
+import { WapLink } from '../../components/WapLink/WapLink'
 import { WapRoutes } from '@/types/wap-routes'
 
 type Props = {
-  routes: WapRoutes
+  routes: WapRoutes<string>
 }
 
 export function WapScreen(props: Props) {

@@ -5,10 +5,23 @@ type FoodsDataKeys = 'name' | 'description' | 'price' | 'quantity'
 
 const foodsData: WapData<FoodsDataKeys> = {
   form: {
-    name: 'text',
-    description: 'textarea',
-    price: 'number',
-    quantity: 'select',
+    name: {
+      type: 'text',
+      label: 'Name',
+    },
+    description: {
+      type: 'textarea',
+      label: 'Description',
+    },
+    price: {
+      type: 'number',
+      label: 'Price',
+    },
+    quantity: {
+      type: 'select',
+      label: 'Quantity',
+      options: ['100', '200', '300'],
+    },
   },
   table: [
     {

@@ -1,15 +1,42 @@
-// type WapDataKeys = 'name' | 'description' | 'price' | 'quantity'
+type BaseInput = {
+  label: string
+}
 
-type FormInputType =
-  | 'text'
-  | 'number'
-  | 'select'
-  | 'checkbox'
-  | 'radio'
-  | 'textarea'
+type FormInputText = BaseInput & {
+  type: 'text'
+}
+
+type FormInputNumber = BaseInput & {
+  type: 'number'
+}
+
+type FormInputSelect = BaseInput & {
+  type: 'select'
+  options: string[]
+}
+
+type FormInputCheckbox = BaseInput & {
+  type: 'checkbox'
+  options: string[]
+}
+
+type FormInputRadio = BaseInput & {
+  type: 'radio'
+  options: string[]
+}
+
+type FormInputTextarea = BaseInput & {
+  type: 'textarea'
+}
+
 export type WapFormData<WapDataKeys extends string> = Record<
   WapDataKeys,
-  FormInputType
+  | FormInputText
+  | FormInputNumber
+  | FormInputSelect
+  | FormInputCheckbox
+  | FormInputRadio
+  | FormInputTextarea
 >
 
 type TableRow<WapDataKeys extends string> = Record<WapDataKeys, string>

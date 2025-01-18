@@ -1,6 +1,6 @@
-import { WAP_ROUTES } from './wap-screens'
+import { WAP_ROUTES } from './children'
 import { WapScreen } from '@/screens/WapScreen/WapScreen'
 
-export function Wap() {
+export function WapLayout() {
   return <WapScreen routes={WAP_ROUTES} />
 }

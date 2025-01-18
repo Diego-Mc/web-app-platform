@@ -1,0 +1,1 @@
+export { wapRoutes } from './routes'

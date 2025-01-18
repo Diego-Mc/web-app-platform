@@ -1,9 +1,8 @@
-import { WapContentScreen } from '@/screens/WapContentScreen/WapContentScreen'
 import { WapData } from '@/types/wap-data'
 
 type FoodsDataKeys = 'name' | 'description' | 'price' | 'quantity'
 
-const foodsData: WapData<FoodsDataKeys> = {
+export const foodsData: WapData<FoodsDataKeys> = {
   form: {
     name: {
       type: 'text',
@@ -96,8 +95,4 @@ const foodsData: WapData<FoodsDataKeys> = {
       },
     },
   ],
-}
-
-export function Foods() {
-  return <WapContentScreen data={foodsData} />
 }

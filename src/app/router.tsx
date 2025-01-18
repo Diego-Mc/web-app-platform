@@ -1,6 +1,6 @@
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router'
-import { authRoutes } from './routes/AuthRouter'
-import { wapRoutes } from './routes/WapRouter'
+import { authRoutes } from './routes/auth'
+import { wapRoutes } from './routes/wap'
 import { AuthorizationLayout } from '@/features/authentication/components/AuthorizationLayout'
 
 const router = createBrowserRouter([

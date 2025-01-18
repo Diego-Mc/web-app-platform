@@ -2,6 +2,16 @@
 
 This is a simple web app platform with screens that each has a form, table and actions.
 
+<br/>
+<hr>
+<br/>
+🎉 The app is live, try it
+<a href="https://web-app-platform.vercel.app/">here</a>.
+</br>
+</br>
+<hr>
+</br>
+
 ## Technologies & Tools
 
 - React

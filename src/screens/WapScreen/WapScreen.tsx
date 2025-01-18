@@ -48,12 +48,14 @@ export function WapScreen(props: Props) {
               onClick={toggleMobile}
               hiddenFrom="sm"
               size="sm"
+              aria-label="Toggle navigation"
             />
             <Burger
               opened={desktopOpened}
               onClick={toggleDesktop}
               visibleFrom="sm"
               size="sm"
+              aria-label="Toggle navigation"
             />
             <Title order={4} m={0}>
               Logo

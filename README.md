@@ -1,50 +1,69 @@
-# React + TypeScript + Vite
+# Web App Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple web app platform with screens that each has a form, table and actions.
 
-Currently, two official plugins are available:
+## Technologies & Tools
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- TypeScript
+- Vite
+- Mantine
+- React Router v7
+- Emotion
+- Eslint
+- Prettier
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 🔐 Mock Authentication and Authorization
 
-- Configure the top-level `parserOptions` property like this:
+The app has a fake login screen that doesn't actually verify anything (no backend).\
+To log in you only need to enter valid email and password according to the validation logic of the form.\
+It uses the session srotage to store a hardcoded fake token.
+This logic is abstracted away in a `useAuth` hook.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 📱 Responsive Layout
+
+The app has a responsive layout.
+
+### 🖼️ Generic Screen Components & Router
+
+The app has a generic screen component that can be used to create new screens.\
+Each screen has a form, table and actions.\
+Everything is strongly typed and easy to extend.
+
+## How to run locally?
+
+```bash
+git clone https://github.com/Diego-Mc/web-app-platform.git
+
+cd web-app-platform
+
+npm install
+
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Thinking process
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+I started with some sketches about the technical design of the app:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+![The plan](./docs/plan.png)
+
+Later I began researching a few libraries and frameworks that could help me build the app quickly and efficiently.
+
+### UI Library
+
+I chose Mantine because it has a lot of components especially for forms, I almost went with Radix but Mantine won because they had more form related components.
+
+### Router
+
+I chose React Router v7 in its library form because it is a simple and reliable library for SPA routing.
+
+### CSS-in-JS
+
+I chose Emotion because it is simple and popular.
+
+### DX
+
+I chose Vite because it is fast and easy to use. I also added eslint and prettier to improve consistency and readability.

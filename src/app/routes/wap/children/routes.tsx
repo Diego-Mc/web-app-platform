@@ -1,17 +1,17 @@
 import { Navigate, RouteObject } from 'react-router'
 
-import { WapRoutes } from '@/types/wap-routes'
+import { WapRoute } from '@/types/wap-routes'
 import { Foods } from './Foods/Foods'
 import { Cars } from './Cars/Cars'
 import { Products } from './Products/Products'
 
-type Paths = 'foods' | 'cars' | 'products'
-
-export const WAP_ROUTES: WapRoutes<Paths> = [
+export const WAP_ROUTES = [
   { path: 'foods', label: 'Foods' },
   { path: 'cars', label: 'Cars' },
   { path: 'products', label: 'Products' },
-] as const
+] as const satisfies WapRoute[]
+
+type Paths = (typeof WAP_ROUTES)[number]['path']
 
 export const DEFAULT_WAP_ROUTE = WAP_ROUTES[0]
 

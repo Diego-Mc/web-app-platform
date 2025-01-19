@@ -10,13 +10,13 @@ import {
 import { useDisclosure } from '@mantine/hooks'
 import { Outlet } from 'react-router'
 import { WapLink } from '../../components/WapLink/WapLink'
-import { WapRoutes } from '@/types/wap-routes'
 import { useStyles } from './useStyles'
 import { IconLogout } from '@tabler/icons-react'
 import { useAuth } from '@/features/authentication/hooks/useAuth'
+import { WapRoute } from '@/types/wap-routes'
 
 type Props = {
-  routes: WapRoutes<string>
+  routes: WapRoute[]
 }
 
 export function WapScreen(props: Props) {

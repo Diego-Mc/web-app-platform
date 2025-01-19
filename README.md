@@ -54,6 +54,13 @@ npm install
 npm run dev
 ```
 
+## How to add a new screen?
+
+Everyting related to the wap screens is in the `src/app/routes/wap/children` folder.
+
+1. Duplicate one of the existing screens (directories). Update the names and data to fit the new screen content.
+2. Update the constant `WAP_ROUTES` in the `routes.tsx` file with the new screen name and label & you will get TS hints on where to add the new screen component.
+
 ## Thinking process
 
 I started with some sketches about the technical design of the app:

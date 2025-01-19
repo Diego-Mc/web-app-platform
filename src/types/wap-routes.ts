@@ -1,6 +1,4 @@
-export type WapRoute<Path extends string> = {
-  path: Path
+export type WapRoute = {
+  path: string
   label: string
 }
-
-export type WapRoutes<Path extends string> = WapRoute<Path>[]

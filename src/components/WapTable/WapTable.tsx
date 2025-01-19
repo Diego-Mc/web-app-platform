@@ -1,6 +1,7 @@
 import { WapTableData } from '@/types/wap-data'
 import { Stack } from '@mantine/core'
 import { Table } from '@mantine/core'
+import { useStyles } from './useStyles'
 
 type Props<T extends string> = {
   data: WapTableData<T>
@@ -9,10 +10,17 @@ type Props<T extends string> = {
 export function WapTable<T extends string>(props: Props<T>) {
   const { data } = props
 
+  const { classes } = useStyles()
+
   return (
     <Stack>
       <Table.ScrollContainer minWidth={600}>
-        <Table highlightOnHover withTableBorder withColumnBorders>
+        <Table
+          highlightOnHover
+          withTableBorder
+          withColumnBorders
+          className={classes.table}
+        >
           <Table.Thead>
             <Table.Tr>
               {data.columns.map((column) => (
